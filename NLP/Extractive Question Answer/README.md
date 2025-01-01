@@ -88,7 +88,7 @@ tokenizer.decode(predict_answer_tokens)
 
 <pre>
 <code>
-git clone &lt;repository-url&gt;
+git clone &lt;https://github.com/SangamNirala/Data_Science/tree/main/NLP/Extractive%20Question%20Answer&gt;
 cd &lt;repository-folder&gt;
 </code>
 </pre>
