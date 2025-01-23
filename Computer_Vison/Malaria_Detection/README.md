@@ -44,12 +44,7 @@ The model's performance is evaluated using various metrics, including:
 - **AUC (Area Under the Curve)**: A performance measurement for classification problems at various threshold settings.
 - **Confusion Matrix**: A table used to describe the performance of the model on the test dataset.
 
-## Usage
-To run the project, ensure you have the required libraries installed. You can use the following command to install the necessary packages:
 
-```bash
-pip install -r requirements.txt
-```
 
 ## Conclusion
 This project demonstrates the application of deep learning techniques for image classification tasks, specifically in the medical field for malaria detection. The model's ability to accurately classify cell images can significantly aid healthcare professionals in diagnosing malaria at an early stage, potentially saving lives.
