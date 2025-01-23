@@ -1,64 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--     <title>Human Emotions Detection</title> -->
-</head>
-<body>
+# Human Emotions Detection
 
-<h1>Human Emotions Detection</h1>
-<p>This repository contains a Jupyter Notebook for detecting human emotions using deep learning techniques. The model is built using TensorFlow and Keras, and it utilizes a dataset of facial expressions to classify emotions.</p>
+## Description
+This project implements a **deep learning** model for detecting **human emotions** from images using advanced **image classification** techniques. The model is trained on a dataset of facial expressions, enabling it to classify emotions into categories such as **angry**, **happy**, and **sad**. By leveraging **TensorFlow** and **Keras**, this project demonstrates the effectiveness of neural networks in the field of **computer vision**.
 
-<h2>Table of Contents</h2>
-<ul>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#dataset">Dataset</a></li>
-    <li><a href="#model-architecture">Model Architecture</a></li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-</ul>
+## Installation
+To set up the project, ensure you have the following dependencies installed:
+- **TensorFlow**: The primary framework used for building and training the deep learning model.
+- **NumPy**: For numerical computations and data manipulation.
+- **Matplotlib**: For visualizing training results and data.
+- **Scikit-learn**: For additional machine learning utilities and metrics.
+- **OpenCV**: For image processing tasks.
+- **Seaborn**: For enhanced data visualization.
+- **Albumentations**: For data augmentation techniques to improve model robustness.
+- **WandB**: Weights and Biases for tracking experiments and visualizing results.
+- **ONNX**: For exporting the trained model to the ONNX format, enabling interoperability with various platforms and frameworks.
 
-<h2 id="installation">Installation</h2>
-<pre><code>pip install tensorflow numpy matplotlib scikit-learn opencv-python seaborn</code></pre>
+You can install the required packages using pip:
+```bash
+pip install tensorflow numpy matplotlib scikit-learn opencv-python seaborn albumentations wandb onnx
+```
 
-<h2 id="usage">Usage</h2>
-<p>To run the notebook, clone the repository and open the Jupyter Notebook:</p>
-<pre><code>git clone https://github.com/yourusername/human-emotions-detection.git
-cd human-emotions-detection
-jupyter notebook</code></pre>
+## Usage
+1. Clone the repository and navigate to the project directory.
+2. Prepare your dataset in the specified directory structure, ensuring it contains images labeled with the corresponding emotions.
+3. Run the Jupyter Notebook `4-Human Emotions Detection by Neuralearn.ai- (1).ipynb` to train the model and evaluate its performance on the emotion detection task.
+4. After training, the model can be exported to the **ONNX** format for deployment and inference in different environments.
 
-<h2 id="dataset">Dataset</h2>
-<p>The dataset used for training and validation can be downloaded from Kaggle. Make sure to place the dataset in the correct directory structure as specified in the notebook.</p>
+## Model Architecture
+The project utilizes various deep learning architectures, including:
+- **LeNet**: A simple convolutional neural network designed for image classification tasks.
+- **ResNet34**: A deeper network that employs residual connections to facilitate training and improve accuracy.
+- **EfficientNet**: A family of models that optimize the balance between depth, width, and resolution for enhanced performance in emotion detection.
+- **Vision Transformers**: A cutting-edge approach that applies transformer models to image data, demonstrating significant potential in computer vision tasks.
 
-<h2 id="model-architecture">Model Architecture</h2>
-<p>The model is built using a convolutional neural network (CNN) architecture. The configuration parameters are defined in the notebook, including batch size, learning rate, and number of epochs.</p>
-<pre><code>CONFIGURATION = {
-    "BATCH_SIZE": 32,
-    "IM_SIZE": 256,
-    "LEARNING_RATE": 1e-3,
-    "N_EPOCHS": 20,
-    "NUM_CLASSES": 3,
-    "CLASS_NAMES": ["angry", "happy", "sad"],
-}</code></pre>
+## ONNX Integration
+The project includes functionality to export the trained model to the **ONNX** format. This allows for:
+- **Interoperability**: The model can be used across different platforms and frameworks that support ONNX, such as PyTorch and Caffe2.
+- **Performance Optimization**: ONNX provides tools for optimizing model inference, making it suitable for deployment in production environments.
+- **Ease of Use**: Users can easily convert their TensorFlow/Keras models to ONNX format, facilitating integration into various applications.
 
-<h2 id="results">Results</h2>
-<p>The model's performance can be evaluated using accuracy and loss metrics. Visualizations of the training process are included in the notebook.</p>
-<pre><code>plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
-plt.title('Model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
-plt.legend(['train_accuracy', 'val_accuracy'])
-plt.show()</code></pre>
+## Dataset Information
+The dataset used for training and evaluation consists of images labeled with different emotions. The dataset can be downloaded from Kaggle or other sources. The project includes data augmentation techniques, such as random rotations and flips, to enhance the training dataset and improve the model's robustness against variations in input data.
 
-<h2 id="contributing">Contributing</h2>
-<p>Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.</p>
+## Acknowledgments
+- **TensorFlow** and **Keras** for providing the deep learning framework that powers the emotion detection model.
+- The dataset contributors for making the emotion dataset available for research and development.
+- The authors of the various models and techniques used in this project, which have inspired and guided the implementation.
 
-<h2 id="license">License</h2>
-<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
 
-</body>
-</html>
