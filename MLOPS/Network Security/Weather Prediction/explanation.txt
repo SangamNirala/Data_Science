@@ -1,0 +1,52 @@
+The project is an ETL (Extract, Transform, Load) pipeline designed to automate the process of collecting and storing weather data from the Open-Meteo API into a PostgreSQL database using Apache Airflow for orchestration.
+
+**Workflow**:
+
+1. **Extract**:
+   - The pipeline begins with the extraction of weather data from the Open-Meteo API. The `extract_weather_data` function utilizes an HTTP Hook to make a GET request to the API endpoint, which is constructed using predefined latitude and longitude values (for example, London). If the API call is successful, the function returns the weather data in JSON format.
+
+2. **Transform**:
+   - In the transformation phase, the `transform_weather_data` function processes the extracted weather data to extract relevant information, focusing on key metrics such as temperature, wind speed, and weather conditions. This structured data is prepared for loading into the database.
+
+3. **Load**:
+   - The final phase is loading the transformed data into a PostgreSQL database. The `load_weather_data` function connects to the database using a Postgres Hook, creates a table if it doesn't exist, and inserts the processed weather data into the table.
+
+4. **DAG Structure**:
+   - The entire ETL workflow is encapsulated within an Airflow DAG (Directed Acyclic Graph) named `weather_etl_pipeline`. This DAG is scheduled to run daily, ensuring that the weather data is updated regularly.
+
+5. **Supporting Files**:
+   - **`airflow_settings.yaml`**: Contains configuration settings for Airflow, including connection details for the PostgreSQL database and the Open-Meteo API.
+   - **`docker-compose.yml`**: Defines the services required for the project, including the PostgreSQL database setup.
+   - **`README.md`**: Provides an overview of the project, including setup instructions and general information about the ETL process.
+   - **`tests/dags/test_dag_example.py`**: Contains tests for the DAGs to ensure they function correctly.
+
+**Conclusion**:
+In conclusion, this project implements a robust ETL pipeline that automates the process of fetching, processing, and storing weather data. The use of Airflow allows for easy scheduling and management of the workflow, while the PostgreSQL database serves as a reliable storage solution for the processed data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The project is an ETL (Extract, Transform, Load) pipeline that automates the process of collecting and storing weather data from the Open-Meteo API into a PostgreSQL database using Apache Airflow for orchestration. 
+
+In this project, we utilize Apache Airflow, an open-source platform widely adopted by Big Data engineering and data science teams, to manage and schedule workflows. The workflow begins with the extraction phase, where the `extract_weather_data` function uses an HTTP Hook to make a GET request to the Open-Meteo API endpoint, constructed using predefined latitude and longitude values (for example, London). If the API call is successful, the function returns the weather data in JSON format.
+
+Next, in the transformation phase, the `transform_weather_data` function processes the extracted weather data to extract relevant information, focusing on key metrics such as temperature, wind speed, and weather conditions. This structured data is prepared for loading into the database.
+
+Finally, the transformed data is loaded into the PostgreSQL database in the loading phase. The `load_weather_data` function connects to the database using a Postgres Hook, creates a table if it doesn't exist, and inserts the processed weather data into the table.
+
+The entire ETL workflow is encapsulated within an Airflow DAG (Directed Acyclic Graph) named `weather_etl_pipeline`, which is scheduled to run daily, ensuring that the weather data is updated regularly. Supporting files include `airflow_settings.yaml` for configuration settings, `docker-compose.yml` for defining services, and `README.md` for project overview and setup instructions. Additionally, tests for the DAGs are included in `tests/dags/test_dag_example.py` to ensure they function correctly.
+
+In conclusion, this project implements a robust ETL pipeline that automates the process of fetching, processing, and storing weather data, leveraging Airflow for scheduling and PostgreSQL for reliable data storage. The use of Astronomer helps manage the entire Airflow setup, making it easier to deploy and maintain the ETL pipeline on platforms like AWS.

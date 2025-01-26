@@ -1,0 +1,4 @@
+1. Built an ETL pipeline with Apache Airflow to automate weather data extraction from the Open-Meteo API into PostgreSQL.
+2. Used HTTP Hooks for real-time data retrieval based on geographic coordinates.
+3. Processed data to highlight key metrics like temperature and wind speed.
+4. Managed workflows with Airflow DAGs for daily data updates.
